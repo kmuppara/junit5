@@ -22,5 +22,15 @@ import org.apiguardian.api.API;
  * @see HierarchicalTestEngine
  */
 @API(status = MAINTAINED, since = "1.0")
-public interface EngineExecutionContext {
+public interface EngineExecutionContext extends AutoCloseable {
+	/**
+	 * Closes this context, close any underlying resources.
+	 *
+	 * <p>This default implementation does nothing.
+	 *
+	 * @since 1.1
+	 */
+	@Override
+	default void close() {
+	}
 }
